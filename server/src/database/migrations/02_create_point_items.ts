@@ -5,7 +5,7 @@ export async function up(knex: Knex) {
   //UM FOI
   return knex.schema.createTable('point_items', table => {
     table.increments('id').primary();
-    table.integer('poit_id').notNullable().references('id').inTable('points')
+    table.integer('point_id').notNullable().references('id').inTable('points')
     table.integer('item_id').notNullable().references('id').inTable('items')
   })//Criar a tabela no javascript
 }

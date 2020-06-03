@@ -6,10 +6,10 @@ const port = 3333
 
 const app = express()
 
+app.use(cors(/* url que pode acessar a minha api */))
 app.use(express.json())
 app.use(routes)
 app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')))//imagens 
-app.use(cors(/* url que pode acessar a minha api */))
 
 app.listen(port, () => {
   console.log("Server up and running on port " + port);
